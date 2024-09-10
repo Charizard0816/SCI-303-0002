@@ -3,6 +3,7 @@
 #include <string>
 #include <array>
 #include <iostream>
+#include <algorithm>
 #include <stdexcept>
 
 int searchArrayForInt(int value, int values[], int lastIndex){ //Searches Array for the value inputed by user
@@ -44,7 +45,6 @@ int addAtEnd(int value, int values[], int lastIndex){ //Adds a new value at the 
 }
 
 void removeIndex(int index, int values[], int lastIndex){ //Removes the value at a given index
-    std::cout << values[index] << std::endl;
     for (int i = index; i < lastIndex + 1; i++) //Moves the values down the array
     {
         values[i] = values[i+1];
@@ -112,14 +112,28 @@ void fillArray(){ //Reads the input file and fills the array
     int num = 0;
     int values[101];
     size_t pos;
+    std::string s;
     std::ifstream file("D:/SCI 303/SCI-303-0002/Assignment_1/A1input.txt");//Reads the file
 
     while (getline(file, text, ' ')) { //Stores the values into the array
-        while ((pos = text.find('\n')) != std::string::npos)
-            text.erase(pos, 1);
-        num = stoi(text);
-        values[count] = num;
-        count++;
+       text.erase(std::remove(text.begin(), text.end(), '\n'), text.end());
+        if (text.size() > 3)
+        {
+            s=text.substr(0,2);
+            num = stoi(s);
+            values[count] = num;
+            count++;
+            text=text.substr(2,2);
+            num = stoi(text);
+            values[count] = num;
+            count++;
+            
+        }
+        else{
+            num = stoi(text);
+            values[count] = num;
+            count++;
+        }
     }
     file.close();
     display(values, count - 1);

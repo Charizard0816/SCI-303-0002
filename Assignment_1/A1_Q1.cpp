@@ -1,4 +1,3 @@
-#include <iostream>
 #include "A1_Q1.h"
 
 using namespace std;
