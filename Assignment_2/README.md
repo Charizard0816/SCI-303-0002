@@ -5,12 +5,12 @@ This program is a single linked list with the following functionality:
 3. Display the front, back, entire list, or whether the list is empty
 4. Search the list for a given value
 This program has a user interface that allows the user to edit the list how they see fit
-![screenshot](A2_Q1_1.jpeg)
-![screenshot](A2_Q1_2.jpeg)
-![screenshot](A2_Q1_3.jpeg)
-![screenshot](A2_Q1_4.jpeg)
-![screenshot](A2_Q1_5.jpeg)
-![screenshot](A2_Q1_6.jpeg)
+![screenshot](Outputs/A2_Q1_1.jpg)
+![screenshot](Outputs/A2_Q1_2.jpg)
+![screenshot](Outputs/A2_Q1_3.jpg)
+![screenshot](Outputs/A2_Q1_4.jpg)
+![screenshot](Outputs/A2_Q1_5.jpg)
+![screenshot](Outputs/A2_Q1_6.jpg)
 
 A2_Q2:
 This Program is a stack of integers using a vector with the following functionality:
@@ -22,4 +22,4 @@ This Program is a stack of integers using a vector with the following functional
 
 This program is just preset data and will always give the same outputs
 
-![screenshot](A2_Q2.jpeg)
+![screenshot](Outputs/A2_Q2.jpg)
