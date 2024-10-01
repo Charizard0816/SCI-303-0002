@@ -168,11 +168,113 @@ class SingleList{
             }
             cout << "nullptr" << endl << "Num Items: " << num_items << endl;
         }
-        int menu(){//UI menu
-            int choice;
-            cout << "Please Choose an Operation:\n1. Add a Value to the List\n2. Remove a Value form the List\n3. View the List\n4. Search for a Value in the List" << endl;
+        void menu(){//UI menu
+            int choice = 0;
+            int add = 0;
+            int exile = 0;
+            int view = 0;
+            string response;
+            int index = 0;
+            size_t search = 0;
+            
+            while (choice != 5){//Displays the choices to the user
+            cout << "Please Choose an Operation:\n1. Add a Value to the List\n2. Remove a Value form the List\n3. View a Value/the List\n4. Search for a Value in the List\n5. End Program" << endl;
             cin >> choice;
-            return choice;
+            switch (choice){
+            case 1:
+                cout << "Please Choose a Function:\n1. push_front\n2. push_back\n3. insert" << endl;
+                cin >> add;
+                cout << "Please Enter Your Value:" << endl;
+                cin >> response;
+                switch (add){
+                case 1:
+                    push_front(response);
+                    break;
+                case 2:
+                    push_back(response);
+                    break;
+                case 3:
+                    cout << "Please Enter Your Index:" << endl;
+                    cin >> index;
+                    insert(index, response);
+                    break;
+                
+                default:
+                    break;
+                }
+                break;
+            case 2:
+                cout << "Please Choose a Function:\n1. pop_front\n2. pop_back\n3. remove"<< endl;
+                cin >> exile;
+                switch (exile){
+                case 1:
+                    pop_front();
+                    break;
+                case 2:
+                    pop_back();
+                    break;
+                case 3:
+                    cout << "Please Enter Your Index:" << endl;
+                    cin >> index;
+                   if (remove(index))
+                   {
+                    cout << "Value Removed" << endl;
+                   }
+                   else{
+                    cout << "Invalid Index" << endl;
+                   }
+                    break;
+
+                default:
+                    break;
+                }
+                break;
+                break;
+            case 3:
+                cout << "Please Choose a Function:\n1. display\n2. empty\n3. front\n4. back" << endl;
+                cin >> view;
+                switch (view){
+                case 1:
+                    display();
+                    break;
+                case 2:
+                    if (empty())
+                    {
+                        cout << "The List is Empty" << endl;
+                    }
+                    else{
+                        cout << "The List is Not Empty" << endl;
+                    }
+                    
+                    break;
+                case 3:
+                    cout << "The Front of the List is:\n" << front() << endl;
+                    break;
+                case 4:
+                    cout << "The Back of the List is:\n" << back() << endl;
+                    break;
+
+                default:
+                    break;
+                }
+                break;
+                break;
+            case 4:
+                cout << "Please Enter Your Value:" << endl;
+                cin >> response;
+                search = find(response);
+                if (search == num_items){
+                    cout << "The Value \"" << response << "\" is not in the List:\n"<< search << endl;
+                }
+                else{
+                    cout << "The Value \"" << response << "\" is at the Index:\n" << search << endl;
+                }
+                break;
+
+            default:
+                break;
+            }    
+    }
         }
         ~SingleList(){//Deconstructor
             

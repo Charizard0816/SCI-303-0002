@@ -14,6 +14,7 @@ class Stack{
         void push(int value){//Adds value to top of stack
             
             stack.push_back(value);
+            cout << "Pushed to the Top of the Stack" << endl;
         }
         void pop(){//Removes value from top of stack
             
@@ -22,6 +23,7 @@ class Stack{
             }
             else{
                 stack.pop_back();
+                cout << "Popped the Top of the Stack" << endl;
             }
         }
         bool isEmpty(){//Returns a bool value for if the stack is empty
