@@ -2,6 +2,28 @@
 
 int main(){
     SingleList<string> list;
+    int choice = 0;
+    while (choice != 5)
+    {
+        choice = list.menu();
+        switch (choice){
+        case 1:
+            
+            break;
+        case 2:
+            
+            break;
+        case 3:
+            
+            break;
+        case 4:
+            
+            break;
+
+        default:
+            break;
+        }    
+    }
     
     list.push_front("Alice");
     list.push_back("Bob");

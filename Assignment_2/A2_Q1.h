@@ -161,11 +161,18 @@ class SingleList{
         void display(){
             
             Node<Item_Type>* current = head;
+            
             while (current){
                 cout << current->data << " -> ";
                 current = current->next;
             }
             cout << "nullptr" << endl << "Num Items: " << num_items << endl;
+        }
+        int menu(){//UI menu
+            int choice;
+            cout << "Please Choose an Operation:\n1. Add a Value to the List\n2. Remove a Value form the List\n3. View the List\n4. Search for a Value in the List" << endl;
+            cin >> choice;
+            return choice;
         }
         ~SingleList(){//Deconstructor
             
